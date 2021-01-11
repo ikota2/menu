@@ -1,0 +1,44 @@
+.leftMenuBody {
+  position: relative;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.leftMenuBody__item {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.leftMenuBody__arrow {
+  position: absolute;
+  left: -20px;
+  top: 6px;
+  border: 0px;
+}
+
+.leftMenuBody__arrow::before {
+  content: "";
+  display: block;
+
+  transform: rotate(45deg);
+  transition: 0.3s;
+
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.leftMenuBody__arrow_down::before {
+  content: "";
+  transition: 0.3s;
+  transform: rotate(225deg);
+}
