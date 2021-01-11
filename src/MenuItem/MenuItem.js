@@ -4,9 +4,6 @@ import "./menu.css";
 
 export function MenuItem({ pages, id }) {
   const [visible, setVisible] = useState(false);
-  function handleClick() {
-    setVisible((previous) => !previous);
-  }
   const firstLevelIds = pages[id];
 
   return (
@@ -18,7 +15,7 @@ export function MenuItem({ pages, id }) {
               ? "leftMenuBody__arrow"
               : "leftMenuBody__arrow leftMenuBody__arrow_down"
           }
-          onClick={handleClick}
+          onClick={() => setVisible((previous) => !previous)}
         ></button>
       )}
       <div className='leftMenuBody__item' id={firstLevelIds.id}>
