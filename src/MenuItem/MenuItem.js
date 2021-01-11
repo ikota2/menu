@@ -1,24 +1,22 @@
 import React, { useState } from "react";
 import { Menu } from "../Menu/Menu.js";
-import "./menu.css";
+import "./menuItem.css";
 
 export function MenuItem({ pages, id }) {
   const [visible, setVisible] = useState(false);
   const firstLevelIds = pages[id];
 
   return (
-    <div className='leftMenuBody'>
+    <div className='menuItem'>
       {firstLevelIds.pages !== undefined && (
         <button
           className={
-            visible
-              ? "leftMenuBody__arrow"
-              : "leftMenuBody__arrow leftMenuBody__arrow_down"
+            visible ? "menuItem__arrow" : "menuItem__arrow menuItem__arrow_down"
           }
           onClick={() => setVisible((previous) => !previous)}
         ></button>
       )}
-      <div className='leftMenuBody__item' id={firstLevelIds.id}>
+      <div className='menuItem__item' id={firstLevelIds.id}>
         <a href={firstLevelIds.url}>{firstLevelIds.title}</a>
       </div>
       {firstLevelIds.pages !== undefined && visible && (
