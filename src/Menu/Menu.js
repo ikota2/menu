@@ -1,8 +1,8 @@
 import React from "react";
 import { MenuItem } from "../MenuItem/MenuItem.js";
 
-export function Menu({ ids, pages }) {
+export function Menu({ ids }) {
   return ids.map((id) => {
-    return <MenuItem pages={pages} id={id} />;
+    return <MenuItem id={id} />;
   });
 }
